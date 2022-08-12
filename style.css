@@ -1,9 +1,11 @@
 body {
    margin:0;
    font-family: "Montserrat", "Helvetica", "Arial", sans-serif;
-   font-size: 16px;
+   font-size: 18px;
    line-height: 22.4px;
    background-color:#F2F2F2;
+   color:#535353;
+   font-weight:300;
 }
 
 .container{
@@ -32,7 +34,7 @@ h2{
 	border: 1px solid #D4D3D3;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 36px;
-    padding-left:16px;
+    padding-left:24px;
 }
 
 .newTask:focus{
@@ -43,11 +45,13 @@ h2{
 	width: 155px;
     height: 50px;
     background: #D4D3D3;
-    border:none;
     color:white;
     font-size: 16px;
     text-transform: uppercase;
-}
+    display:flex;
+    justify-content: center;
+    align-items: center;
+ }
 
 .items{
 	width:640px;
@@ -55,3 +59,54 @@ h2{
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     background: #FFFFFF;
 }
+
+.titleItems{
+	display: flex;
+	justify-content: space-between;
+	padding:10px 24px;
+	border-bottom: 1px solid #D4D3D3;
+}
+
+.btns{
+	display: flex
+}
+
+.btn-all, .btn-active, .btn-completed {
+	border: none;
+	background-color: white;
+	font-size: 16px;
+	font-weight: lighter;
+	color:#535353;
+	margin-right:18px;
+
+}
+
+.btn-completed{
+	margin-right: 0;
+}
+
+.task{
+	display:flex;
+	height: 50px;
+	align-items: center;
+	border-bottom: 1px solid #D4D3D3;
+	padding-left:24px;
+}
+
+.checkbox {
+	border-radius: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
