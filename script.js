@@ -1,33 +1,52 @@
 let newTask = document.querySelector('.newTask');
 let btnAdd = document.querySelector('.btn-add');
-let items = document.querySelector('.items');
+let fieldItems = document.querySelector('.fieldItems');
 
-btnAdd.addEventListener('click', function(){
-	console.log('click');
+
+let tasks = [];
+!localStorage.tasks ? tasks = [] : tasks = JSON.parse(localStorage.getItem('tasks'));
+
+function Task (descrip) {
+	this.description = descrip;
+	this.completed = false;
+}
+
+let updateLocal = function () {
+	localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+btnAdd.addEventListener('click', function() {
+	tasks.push(new Task(newTask.value));
+
 	if(newTask.value !== 0) {
-		createElement();
-        newTask.value = '';
-    } 
+		/*createElement();
+*/        newTask.value = '';
+    }
+
+    updateLocal(); 
 
  });
 
-let createElement = function(){
+/*
+let createElement = function(task, index) {
+	return `
+          <div class="task"> 
+          	<div class="btnTask-completed"></div>
+          	<div class="description">${task.description}</div>
+          	</div class="btnTask-delete"></div>
+          </div>
 
-    let div = document.createElement('div');
+	`
 
-	div.classList.add('task');
-	items.append(div);
-	console.log(div);
-
-	let input = document.createElement('input');
-	input.type = 'checkbox';
-	input.value = newTask.value;
-	input.classList.add('checkbox')
-	div.append(input);
-
-	let divText = document.createElement('div');
-	divText.textContent = newTask.value;
-	div.append(divText);
 }
 
+let fieldWithItems = function() {
+	fieldItems.innerHTML = '';
+	if (tasks.length > 0) {
+		tasks.map((item, index) => {
+			fieldItems.innerHTML += createElement(item, index);
+		})
+	}
+}
 
+fieldWithItems();*/
