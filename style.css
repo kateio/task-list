@@ -37,7 +37,7 @@ h2{
     padding-left:24px;
 }
 
-.newTask:focus{
+.newTask:hover{
 	border: 1px solid #535353;
 }
 
@@ -52,6 +52,10 @@ h2{
     justify-content: center;
     align-items: center;
  }
+
+.btn-add:hover{
+	background: #535353;
+}
 
 .items{
 	width:640px;
@@ -91,10 +95,28 @@ h2{
 	align-items: center;
 	border-bottom: 1px solid #D4D3D3;
 	padding-left:24px;
+	justify-content: space-between;
+}
+
+.task div{
+	display: flex;
 }
 
 .checkbox {
 	border-radius: 17px;
+}
+
+.btnTask-completed{
+	box-sizing: border-box;
+	border: 1px solid #D4D3D3;
+	width:24px;
+	height:24px;
+	border-radius: 24px;
+	margin-right:16px;
+}
+
+.btnTask-delete{
+	margin-right: 24px;
 }
 
 

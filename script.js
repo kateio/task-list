@@ -1,6 +1,7 @@
 let newTask = document.querySelector('.newTask');
 let btnAdd = document.querySelector('.btn-add');
 let fieldItems = document.querySelector('.fieldItems');
+let titleItems = document.querySelector('.titleItems');
 
 
 let tasks = [];
@@ -19,21 +20,24 @@ btnAdd.addEventListener('click', function() {
 	tasks.push(new Task(newTask.value));
 
 	if(newTask.value !== 0) {
-		/*createElement();
-*/        newTask.value = '';
+		fieldWithItems();
+        newTask.value = '';
     }
 
     updateLocal(); 
 
+
  });
 
-/*
+
 let createElement = function(task, index) {
 	return `
           <div class="task"> 
-          	<div class="btnTask-completed"></div>
-          	<div class="description">${task.description}</div>
-          	</div class="btnTask-delete"></div>
+          	<div>
+	          	<div class="btnTask-completed"></div>
+	          	<div class="description">${task.description}</div>
+          	</div>
+          	<div class="btnTask-delete">delete</div>
           </div>
 
 	`
@@ -49,4 +53,14 @@ let fieldWithItems = function() {
 	}
 }
 
-fieldWithItems();*/
+fieldWithItems();
+
+
+
+let amountItems = function() {
+	return `
+		<div>${tasks.length} items</div>
+	`
+}
+
+titleItems.insertAdjacentHTML('afterbegin', amountItems());
